@@ -1,0 +1,20 @@
+
+> museumloaniq@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ accepted execution is not final (0.838818ms)
+✔ finalized revert does not succeed (0.128523ms)
+✔ finality requires successful execution (0.12605ms)
+✔ unknown final result fails closed (0.130506ms)
+✔ undetermined is terminal (0.125008ms)
+✔ timeout never submits a duplicate (0.471257ms)
+✔ real Studio receipt shape (0.163525ms)
+✔ numeric Studio final status (0.102144ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 96.284552

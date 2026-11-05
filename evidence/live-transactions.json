@@ -1,0 +1,42 @@
+[
+  {
+    "method": "register_loan",
+    "hash": "0x2f2fd7c122806c575b9531b6de8e004f17d60bdb368df66f723bc432c71c1bd3",
+    "execution": "SUCCESS"
+  },
+  {
+    "method": "accept_loan",
+    "hash": "0xa6b5dc00a1bceb1609d065af4e725363d3364f86a5190429197db97c7cf41375",
+    "execution": "SUCCESS"
+  },
+  {
+    "method": "submit_evidence",
+    "hash": "0x430a3c33afe0d16d7e464d2f6d31d36f6a8aaadb0d1f3251da7bef927e86ec98",
+    "execution": "SUCCESS"
+  },
+  {
+    "method": "assess",
+    "hash": "0x07479ba0d243fdace4c0a71da7fea628429da2d629ae9303a752cbee6729941b",
+    "execution": "SUCCESS"
+  },
+  {
+    "method": "submit_evidence",
+    "hash": "0x919764019d0aa55cff393f3574a1523f54ad83fffbc34314cb0962ba61f95f6d",
+    "execution": "SUCCESS"
+  },
+  {
+    "method": "assess",
+    "hash": "0x285af37e8da68f3944432cd03e52053bc9fcf6257aea3195cb8b1ab875448142",
+    "execution": "SUCCESS"
+  },
+  {
+    "method": "submit_evidence",
+    "hash": "0x8eac62d266dc2ef49adda949a515c40b497136a185f7e9f829749e9ace79e189",
+    "execution": "SUCCESS"
+  },
+  {
+    "method": "assess",
+    "hash": "0xd1fd685b65e8f029390f7bf4c41bdd978ad14b57c0603d479fd7dfb6cd272c5f",
+    "execution": "SUCCESS"
+  }
+]

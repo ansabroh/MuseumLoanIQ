@@ -1,0 +1,12 @@
+import {createClient,createAccount} from 'genlayer-js';
+import {studionet} from 'genlayer-js/chains';
+import {readFileSync,writeFileSync} from 'node:fs';
+const signer=createAccount(process.env.STUDIO_PRIVATE_KEY);
+const account=signer.address;
+const c=createClient({chain:studionet,account:signer});
+const code=readFileSync('contracts/museum_loan_iq.py','utf8');
+const hash=await c.deployContract({code,args:[]});
+writeFileSync('evidence/deployment-pending.json',JSON.stringify({hash,account,chainId:61999},null,2));
+console.log('Deployment transaction:',hash);
+const r=await c.waitForTransactionReceipt({hash,status:'FINALIZED',interval:2000,retries:90});
+writeFileSync('evidence/deployment-receipt.json',JSON.stringify(r,(_,v)=>typeof v==='bigint'?v.toString():v,2));console.log('Final status:',r.statusName||r.status_name||r.status, 'Contract:', r.to_address);

@@ -1,0 +1,13 @@
+import {createClient} from 'genlayer-js';import {studionet} from 'genlayer-js/chains';import {readFileSync,writeFileSync} from 'node:fs';import {createHash} from 'node:crypto';
+const c=createClient({chain:studionet});const config=JSON.parse(readFileSync('public/deployment.json'));
+const hashes=[config.deploymentTransaction,...JSON.parse(readFileSync('evidence/live-transactions.json')).map(x=>x.hash),'0x3f831c783c9b5fac030f91f91759c7ab9512e493630b6b423414162eab1c40db'];
+const txs=await Promise.all(hashes.map(hash=>c.getTransaction({hash})));
+const trim=r=>({execution_result:r.execution_result,vote:r.vote,mode:r.mode,eq_outputs:r.eq_outputs,genvm_result:r.genvm_result});
+const receipts=txs.map(t=>({hash:t.hash,sender:t.from_address,recipient:t.to_address,status:t.status,status_name:t.status===7?'FINALIZED':String(t.status),execution_mode:t.execution_mode,leader_only:t.leader_only,result_name:t.result_name,votes:t.consensus_data?.votes,leader_receipt:(Array.isArray(t.consensus_data?.leader_receipt)?t.consensus_data.leader_receipt:[t.consensus_data?.leader_receipt]).filter(Boolean).map(trim),validators:t.consensus_data?.validators?.map(trim)}));
+if(receipts.some(r=>r.status!==7||r.leader_receipt[0]?.execution_result!=='SUCCESS'))throw new Error('Not all transactions finalized successfully');
+writeFileSync('evidence/verified-receipts.json',JSON.stringify(receipts,null,2)+'\n');
+const code=await c.getContractCode(config.address);if(code!==readFileSync('contracts/museum_loan_iq.py','utf8'))throw new Error('Source mismatch');
+writeFileSync('evidence/source-verification.json',JSON.stringify({address:config.address,chainId:61999,source_sha256:createHash('sha256').update(code).digest('hex'),byte_for_byte_match:true,verified_at:new Date().toISOString()},null,2)+'\n');
+const loan=JSON.parse(await c.readContract({address:config.address,functionName:'get_loan',args:[config.demoLoan]}));
+writeFileSync('evidence/live-loan.json',JSON.stringify(loan,null,2)+'\n');
+console.log('Verified',receipts.length,'finalized successful transactions; exact deployed source; outcomes:',loan.assessments.map(x=>x.outcome).join(', '));

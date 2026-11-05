@@ -1,5 +1,6 @@
 export function terminal(tx) {
-  const status=String(tx.statusName??tx.status_name??tx.status??'').toUpperCase();
+  const names=['UNINITIALIZED','PENDING','PROPOSING','COMMITTING','REVEALING','ACCEPTED','UNDETERMINED','FINALIZED','CANCELED','APPEAL_REVEALING','APPEAL_COMMITTING','READY_TO_FINALIZE','VALIDATORS_TIMEOUT','LEADER_TIMEOUT'];
+  const status=String(tx.statusName??tx.status_name??(typeof tx.status==='number'?names[tx.status]:tx.status)??'').toUpperCase();
   if (['CANCELED','CANCELLED','UNDETERMINED','LEADER_TIMEOUT','VALIDATORS_TIMEOUT'].includes(status)) return {done:true,ok:false,status};
   if(status==='FINALIZED'){
     const leader=tx.consensus_data?.leader_receipt;

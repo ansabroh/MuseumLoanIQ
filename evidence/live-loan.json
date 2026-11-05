@@ -1,0 +1,100 @@
+{
+  "accepted_by_borrower": true,
+  "assessments": [
+    {
+      "assessor": "0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A",
+      "borrower_accepted": true,
+      "breaches": [],
+      "coverage_complete": true,
+      "error": "",
+      "evidence_hash": "37738e15fdb2e6a7296f542caa279cd26b4d0eebb8fd91aa3caa9c1bb601255e",
+      "outcome": "COMPLIANT",
+      "previous_hash": "9e3f6a80a43c7a800da04d10e8755e614e772c7d2a1aa49e3a6f1872956ecdc5",
+      "receipt_hash": "d9ea05da19a2ebaa880725db94f5a784a1180b5dfe85db642b51e2c68dad541a",
+      "review": {
+        "after_quote": "Rim intact. Stable glaze crazing unchanged on return.",
+        "before_quote": "Rim intact. Stable glaze crazing documented at dispatch.",
+        "condition": "UNCHANGED",
+        "reason": "The before and after reports both describe the rim as intact and the glaze crazing as stable and unchanged, indicating no new condition changes. The transport report explicitly states that the artifact was transported in an upright sealed climate-controlled crate with courier supervision, which fully satisfies the specified handling terms.",
+        "transport": "SATISFIED",
+        "transport_quote": "Upright sealed climate-controlled crate under courier supervision throughout transit."
+      },
+      "terms_hash": "9e3f6a80a43c7a800da04d10e8755e614e772c7d2a1aa49e3a6f1872956ecdc5",
+      "version": 1
+    },
+    {
+      "assessor": "0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A",
+      "borrower_accepted": true,
+      "breaches": [],
+      "coverage_complete": true,
+      "error": "",
+      "evidence_hash": "b0b0e6e9f3ec865bd22dfa5aff1f4d574369082d3b168b475d10268615dc6d30",
+      "outcome": "REVIEW_REQUIRED",
+      "previous_hash": "d9ea05da19a2ebaa880725db94f5a784a1180b5dfe85db642b51e2c68dad541a",
+      "receipt_hash": "4120b9772ed3422b191911516b8f676dc29dc1d72fff83d7db1efeeea9600aad",
+      "review": {
+        "after_quote": "A new rim chip measuring 3 mm is documented on return. Glaze crazing remains stable.",
+        "before_quote": "Rim intact. Stable glaze crazing documented at dispatch.",
+        "condition": "CHANGED",
+        "reason": "Before report states the rim was intact and glaze crazing stable. After report documents a new 3 mm rim chip while noting the glaze crazing remains stable, indicating a new condition change. The handling terms require an upright sealed climate-controlled crate and courier supervision; the transport report states these conditions were maintained throughout transit.",
+        "transport": "SATISFIED",
+        "transport_quote": "Upright sealed climate-controlled crate under courier supervision throughout transit."
+      },
+      "terms_hash": "9e3f6a80a43c7a800da04d10e8755e614e772c7d2a1aa49e3a6f1872956ecdc5",
+      "version": 2
+    },
+    {
+      "assessor": "0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A",
+      "borrower_accepted": true,
+      "breaches": [
+        "TEMPERATURE:1"
+      ],
+      "coverage_complete": true,
+      "error": "",
+      "evidence_hash": "4ec716c522f4bbc66e7db400b4d8df4da552cfd0cd04cc2173e85cf4f0a07b66",
+      "outcome": "NONCOMPLIANT",
+      "previous_hash": "4120b9772ed3422b191911516b8f676dc29dc1d72fff83d7db1efeeea9600aad",
+      "receipt_hash": "80ad4d83e63f46e92f239bba33d54d131917779aadb59f060a26d90b0fbb53df",
+      "review": null,
+      "terms_hash": "9e3f6a80a43c7a800da04d10e8755e614e772c7d2a1aa49e3a6f1872956ecdc5",
+      "version": 3
+    }
+  ],
+  "evidence": [
+    {
+      "note": "Synthetic live lifecycle test: sample-packet",
+      "sha256": "37738e15fdb2e6a7296f542caa279cd26b4d0eebb8fd91aa3caa9c1bb601255e",
+      "submitter": "0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A",
+      "url": "https://raw.githubusercontent.com/ansabroh/MuseumLoanIQ/b0b6c58a724b7ba2730faa52f9f394252cc58688/evidence/sample-packet.json"
+    },
+    {
+      "note": "Synthetic live lifecycle test: changed-packet",
+      "sha256": "b0b0e6e9f3ec865bd22dfa5aff1f4d574369082d3b168b475d10268615dc6d30",
+      "submitter": "0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A",
+      "url": "https://raw.githubusercontent.com/ansabroh/MuseumLoanIQ/b0b6c58a724b7ba2730faa52f9f394252cc58688/evidence/changed-packet.json"
+    },
+    {
+      "note": "Synthetic live lifecycle test: breach-packet",
+      "sha256": "4ec716c522f4bbc66e7db400b4d8df4da552cfd0cd04cc2173e85cf4f0a07b66",
+      "submitter": "0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A",
+      "url": "https://raw.githubusercontent.com/ansabroh/MuseumLoanIQ/b0b6c58a724b7ba2730faa52f9f394252cc58688/evidence/breach-packet.json"
+    }
+  ],
+  "id": "museum-demo-001",
+  "owner": "0x19E7E376E7C213B7E7e7e46cc70A5dD086DAff2A",
+  "terms": {
+    "artifact_id": "ML-001",
+    "borrower": "0x1563915e194D8CfBA1943570603F7606A3115508",
+    "end": 1120,
+    "handling": "Upright sealed climate-controlled crate; courier supervision required.",
+    "lender": "Demo Museum (synthetic)",
+    "max_gap_seconds": 60,
+    "rh_max_pct100": 5500,
+    "rh_min_pct100": 4500,
+    "start": 1000,
+    "temp_max_c100": 2200,
+    "temp_min_c100": 1800,
+    "title": "Study ceramic bowl · synthetic demonstration"
+  },
+  "terms_hash": "9e3f6a80a43c7a800da04d10e8755e614e772c7d2a1aa49e3a6f1872956ecdc5"
+}
