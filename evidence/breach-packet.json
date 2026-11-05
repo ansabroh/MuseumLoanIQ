@@ -1,0 +1,31 @@
+{
+  "loan_id": "museum-demo-001",
+  "artifact_id": "ML-001",
+  "before_report": "Rim intact. Stable glaze crazing documented at dispatch.",
+  "after_report": "Rim intact. Stable glaze crazing unchanged on return.",
+  "transport_report": "Upright sealed climate-controlled crate under courier supervision throughout transit.",
+  "sources": [
+    {
+      "issuer": "Demo Museum (synthetic)",
+      "reference": "Synthetic condition and logger fixture"
+    }
+  ],
+  "readings": [
+    {
+      "time": 1000,
+      "temp_c100": 2000,
+      "rh_pct100": 5000
+    },
+    {
+      "time": 1060,
+      "temp_c100": 2400,
+      "rh_pct100": 5000
+    },
+    {
+      "time": 1120,
+      "temp_c100": 2000,
+      "rh_pct100": 5000
+    }
+  ],
+  "synthetic": true
+}
