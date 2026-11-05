@@ -15,6 +15,7 @@ npm ci
 npm run dev
 npm test
 pip install -r requirements-dev.txt
+python scripts/prepare-test-sdk.py
 python -m pytest tests/test_contract.py -q
 genvm-lint check contracts/museum_loan_iq.py
 npm run build

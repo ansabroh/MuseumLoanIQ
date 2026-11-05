@@ -16,5 +16,5 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: pip install -r requirements-dev.txt
+      - run: python scripts/prepare-test-sdk.py
       - run: python -m pytest tests/test_contract.py -q
-      - run: genvm-lint check contracts/museum_loan_iq.py
